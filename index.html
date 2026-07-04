@@ -1,161 +1,155 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Jailbreak Generator 😈</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Buat Kamu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body{
-    margin:0;
-    background:black;
-    color:#00ff88;
-    font-family:monospace;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    flex-direction:column;
-}
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f9f3f0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            padding: 20px;
+        }
 
-#loadingScreen{
-    text-align:center;
-}
+        .card {
+            max-width: 550px;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 24px 24px 24px 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04), 0 8px 16px rgba(0,0,0,0.02);
+            border: 1px solid #f0e6e2;
+            transition: all 0.2s ease;
+            position: relative;
+        }
 
-#bar{
-    width:300px;
-    height:25px;
-    border:2px solid #00ff88;
-    margin-top:20px;
-}
+        .card::after {
+            content: "✧";
+            position: absolute;
+            bottom: -12px;
+            right: 30px;
+            font-size: 28px;
+            color: #d4b8ae;
+            opacity: 0.4;
+        }
 
-#progress{
-    width:0%;
-    height:100%;
-    background:#00ff88;
-    box-shadow:0 0 20px #00ff88;
-}
+        .ornamen {
+            text-align: center;
+            font-size: 18px;
+            color: #d9c2b8;
+            letter-spacing: 6px;
+            margin-bottom: 6px;
+        }
 
-#main{
-    display:none;
-    text-align:center;
-}
+        .judul {
+            font-size: 26px;
+            font-weight: 400;
+            text-align: center;
+            color: #3a2c28;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
 
-button{
-    background:black;
-    color:#00ff88;
-    border:2px solid #00ff88;
-    padding:15px 40px;
-    font-size:20px;
-    cursor:pointer;
-    margin-top:20px;
-    font-family:monospace;
-    transition:0.3s;
-}
+        .subjudul {
+            text-align: center;
+            font-size: 14px;
+            color: #b39b91;
+            font-style: italic;
+            margin-bottom: 28px;
+            letter-spacing: 0.3px;
+        }
 
-button:hover{
-    background:#00ff88;
-    color:black;
-    box-shadow:0 0 20px #00ff88;
-}
+        .isi {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #3f3531;
+            text-align: justify;
+            padding: 0 4px;
+        }
 
-#result{
-    margin-top:30px;
-    font-size:35px;
-    text-shadow:0 0 15px #00ff88;
-    animation: glitch 0.2s infinite;
-}
+        .isi p {
+            margin-bottom: 16px;
+        }
 
-@keyframes glitch{
-    0%{transform:translate(1px,1px);}
-    25%{transform:translate(-1px,2px);}
-    50%{transform:translate(2px,-1px);}
-    75%{transform:translate(-2px,1px);}
-    100%{transform:translate(1px,-2px);}
-}
-</style>
+        .highlight {
+            color: #ac7b6b;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        .tanda-tangan {
+            margin-top: 32px;
+            text-align: right;
+            font-style: italic;
+            color: #7a635b;
+            border-top: 1px solid #efe5e1;
+            padding-top: 24px;
+            font-size: 16px;
+        }
+
+        .tanda-tangan span {
+            display: block;
+            font-size: 14px;
+            color: #b39b91;
+            margin-top: 4px;
+            font-style: normal;
+        }
+
+        .tombol-kirim {
+            display: none; /* sembunyiin, biar fokus ke suratnya */
+        }
+
+        /* efek hover halus */
+        .card:hover {
+            box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 28px 18px;
+            }
+            .judul {
+                font-size: 22px;
+            }
+            .isi {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<div id="loadingScreen">
+<div class="card">
+    <div class="ornamen">♡ ✿ ♡</div>
+    <div class="judul">Untuk Kamu</div>
+    <div class="subjudul">— yang selalu ada di pikiranku —</div>
 
-<h1>🤖 AI JAILBREAK GENERATOR 🤖</h1>
+    <div class="isi">
+        <p>Aku menulis ini bukan karena aku pintar merangkai kata, tapi karena aku sadar ada yang perlu aku perbaiki.</p>
 
-<pre id="text">
-[BOOTING AI CORE...]
-</pre>
+        <p>Maafin aku ya, kalau selama ini sikapku yang terlalu <span class="highlight">ramah dan terbuka</span> ke semua orang bikin kamu merasa gak nyaman, atau bahkan merasa <span class="highlight">kurang dihargai</span>. Itu bukan maksudku sama sekali.</p>
 
-<div id="bar">
-<div id="progress"></div>
+        <p>Aku tipe orang yang gak tega ngeliat orang lain sedih, dan aku suka ngobrol. Tapi aku baru sadar, tanpa sadar itu bisa bikin orang yang paling aku sayang—kamu—merasa <span class="highlight">gak istimewa</span>. Padahal, gak ada satu pun dari mereka yang sebanding sama kamu.</p>
+
+        <p>Aku gak minta kamu langsung percaya. Tapi aku minta <span class="highlight">kesempatan</span> buat nunjukkin kalau aku serius. Mulai sekarang, aku bakal lebih jaga batas, lebih perhatian ke kamu, dan belajar buat bikin kamu ngerasa aman.</p>
+
+        <p>Karena buat aku, kamu bukan cuma salah satu dari banyak orang. Kamu adalah <span class="highlight">prioritas</span>.</p>
+    </div>
+
+    <div class="tanda-tangan">
+        Dari aku yang lagi belajar jadi lebih baik,
+        <span>— dengan segala kekurangan, tapi tulus.</span>
+    </div>
 </div>
-
-</div>
-
-<div id="main">
-
-<h1>✅ GENERATOR SELESAI 😈</h1>
-
-<button onclick="startPrank()">MULAI</button>
-
-<div id="result"></div>
-
-</div>
-
-<script>
-
-const progress = document.getElementById("progress");
-const text = document.getElementById("text");
-
-const messages = [
-
-"[BOOTING AI CORE...]",
-"[BYPASSING FILTER...]",
-"[INJECTING PROMPT...]",
-"[UNLOCKING DEV MODE...]",
-"[GENERATING JAILBREAK...]",
-"[ACCESS GRANTED 😈]"
-
-];
-
-let i = 0;
-let width = 0;
-
-const interval = setInterval(() => {
-
-width += 20;
-
-progress.style.width = width + "%";
-
-text.innerText = messages[i];
-
-i++;
-
-if(width >= 100){
-
-clearInterval(interval);
-
-setTimeout(() => {
-
-document.getElementById("loadingScreen").style.display = "none";
-
-document.getElementById("main").style.display = "block";
-
-},1000);
-
-}
-
-},1000);
-
-function startPrank(){
-
-document.getElementById("result").innerHTML =
-"KALO TOLOL YA TOLOL AJA 😂😂";
-
-}
-
-</script>
 
 </body>
-  </html>
+</html>
